@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DCOS Demonstration</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="/css/docs.css" />
+		<link rel="stylesheet" type="text/css" href="/css/prettify.css" />
+		<link rel="stylesheet" type="text/css" href="/css/reset.css" />
+	</head>
+	<body data-spy="scroll" data-target=".bs-docs-sidebar">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="/">DCOS</a>
+					<div class="nav-collapse subnav-collapse">
+						<ul class="nav">
+							<li><a href="/">主页</a></li>
+							<li><a href="/running">实例运行</a></li>
+							<li class="active"><a href="/monitor">监测数据</a></li>
+							<li><a href="/nlist">节点列表</a></li>
+							<li><a href="/guide">说明</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row" style="margin-top:100px;">
+				<div class="span6">
+					<div id="lines" class="span6" style="height:350px;"></div>
+				</div>
+				<div id="statistics" class="span4" style="margin-left:80px;"></div>
+			</div>
+			<hr>
+			<footer><p>© NLSDE 2012</p></footer>
+		</div>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/flotr2.min.js"></script>
+		<script src="/js/jquery-1.7.1.min.js"></script>
+		<script src="/js/jquery.form.js"></script>
+		<script type = "text/javascript">
+		<!--
+			$(function() {
+				monitorHandler();
+			})
+			
+			function monitorHandler() {
+				function updateMonitor() {
+					$.ajax({
+						url: '/monitor/points',
+						dataType: 'json',
+						success: updateGraph
+					});
+					function updateGraph(json) {
+						var array = new Array(), point, graph, i, j;
+						for (i = 0; i < json.length; i++) {
+							array[i] = []
+							for (j = 0; j < json[i].length; j++) {
+								point = [json[i][j].x, json[i][j].y];
+								array[i].push(point);
+							}
+						}
+						graph = Flotr.draw(document.getElementById("lines"), array, { xaxis:{ minorTickFreq:10 }, yaxis:{ min:0, max:100 }, grid:{ minorVerticalLines:true } });
+					}
+					$('#statistics').load('/monitor/statistics');
+				}
+				updateMonitor();
+				setInterval(updateMonitor, 500);
+			}
+		-->
+		</script>
+	</body>
+</html>

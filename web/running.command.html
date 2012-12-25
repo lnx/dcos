@@ -1,0 +1,11 @@
+<#if execution.success>
+	<div class="alert alert-info" style="margin-top:-10px;">
+		<span class="label label-info">Info</span>
+		<span>&nbsp;${execution.feedback}</span>
+	</div>
+<#else>
+	<div class="alert alert-error" style="margin-top:-10px;">
+		<span class="label label-important">Error</span>
+		<span>&nbsp;${execution.feedback}</span>
+	</div>
+</#if>

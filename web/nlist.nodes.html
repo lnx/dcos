@@ -1,0 +1,32 @@
+<table class="table table-bordered">
+	<tr>
+		<th>ID</th>
+		<th>Location</th>
+		<th>Status</th>
+		<th>AgentTime</th>
+		<th>AgentStart</th>
+		<th>MonitorStatus</th>
+		<th>MonitorTime</th>
+		<th>MonitorStart</th>
+		<th>MonitorRate</th>
+	</tr>
+	<#list sensorDataList as sensorData>
+	<#if sensorData.status == 'AGENT'>
+	<tr class="success">
+	<#elseif  sensorData.monitorStatus == 'MONITOR'>
+	<tr class="error">
+	<#else>
+	<tr>
+	</#if>
+		<td>${sensorData.id}</td>
+		<td>${sensorData.location}</td>
+		<td>${sensorData.status}</td>
+		<td>${sensorData.agentTime}</td>
+		<td>${sensorData.agentStart}</td>
+		<td>${sensorData.monitorStatus}</td>
+		<td>${sensorData.monitorTime}</td>
+		<td>${sensorData.monitorStart}</td>
+		<td>${sensorData.monitorRate}</td>
+	</tr>
+	</#list>
+</table>

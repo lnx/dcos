@@ -1,0 +1,36 @@
+<table class="table table-bordered">
+	<tr>
+		<th>统计项</th>
+		<th>数量</th>
+	</tr>
+	<tr>
+		<td>全部节点</td>
+		<td>${totalNumber}</td>
+	</tr>
+	<tr>
+		<td>监控节点</td>
+		<td>${monitorNumber}</td>
+	</tr>
+	<tr>
+		<td>睡眠节点</td>
+		<td>${sleepNumber}</td>
+	</tr>
+	<tr>
+		<td>代理节点</td>
+		<td>${agentNumber}</td>
+	</tr>
+</table>
+<table class="table table-bordered">
+	<tr>
+		<th>代理节点</th>
+		<th>位置</th>
+		<th>频率</th>
+	</tr>
+	<#list agentDataList as agentData>
+	<tr>
+		<td>${agentData.sid}</td>
+		<td>${agentData.location}</td>
+		<td>${agentData.totalRate}</td>
+	</tr>
+	</#list>
+</table>

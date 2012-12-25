@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DCOS Demonstration</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="/css/docs.css" />
+		<link rel="stylesheet" type="text/css" href="/css/prettify.css" />
+		<link rel="stylesheet" type="text/css" href="/css/reset.css" />
+	</head>
+	<body data-spy="scroll" data-target=".bs-docs-sidebar">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="/">DCOS</a>
+					<div class="nav-collapse subnav-collapse">
+						<ul class="nav">
+							<li><a href="/">主页</a></li>
+							<li><a href="/running">实例运行</a></li>
+							<li><a href="/monitor">监测数据</a></li>
+							<li><a href="/nlist">节点列表</a></li>
+							<li class="active"><a href="/guide">说明</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="span3 bs-docs-sidebar">
+					<ul class="nav nav-list bs-docs-sidenav affix">
+						<li class="active"><a href="#overview"><i class="icon-chevron-right"></i>系统简介</a></li>
+						<li class=""><a href="#command"><i class="icon-chevron-right"></i>命令说明</a></li>
+						<li class=""><a href="#tool"><i class="icon-chevron-right"></i>制作工具</a></li>
+					</ul>
+				</div>
+				<div class="span9">
+					<section id="overview">
+						<div class="page-header"><h1>简介</h1></div>
+						<p>为了更好的展示论文中相关算法的具体执行效果，开发了一套可交互的软件对论文中重点章节的研究内容进行展示。通过展示，可以对论文中设计的协同观测系统有更清晰的了解，同时也能看到算法执行中的一些细节。</p>
+					</section>
+					<section id="command">
+						<div class="page-header"><h1>命令说明</h1></div>
+						<p>本部分将对系统中的控制命令给出说明。</p>
+						<table class="table table-bordered table-striped table-hover">
+							<thead>
+								<tr>
+									<th>命令</th>
+									<th>参数</th>
+									<th>说明</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>CLEAR</td>
+									<td>NONE</td>
+									<td>清除本次所有控制命令</td>
+								</tr>
+								<tr>
+									<td>INIT</td>
+									<td>-1 | num1, num2, num3, ...</td>
+									<td>系统初始化</td>
+								</tr>
+								<tr>
+									<td>AGENT</td>
+									<td>NONE</td>
+									<td>开始选举区域代理节点</td>
+								</tr>
+								<tr>
+									<td>TENURE</td>
+									<td>number</td>
+									<td>设定区域代理任期</td>
+								</tr>
+								<tr>
+									<td>START</td>
+									<td>NONE</td>
+									<td>开启监测模块</td>
+								</tr>
+								<tr>
+									<td>STOP</td>
+									<td>NONE</td>
+									<td>关闭监测模块</td>
+								</tr>
+								<tr>
+									<td>SLEEP</td>
+									<td>NONE</td>
+									<td>使用半睡眠调度</td>
+								</tr>
+								<tr>
+									<td>EVENT</td>
+									<td>CLEAR | latitude longitude</td>
+									<td>事件清除或者添加新的事件</td>
+								</tr>
+								<tr>
+									<td>KILL</td>
+									<td>sid</td>
+									<td>停止某个传感器节点</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section id="tool">
+						<div class="page-header"><h1>制作工具</h1></div>
+						<dl>
+							<dt><a href="http://jersey.java.net/" target="_blank">Jersey</a></dt>
+							<dd>用来在系统中提供REST服务</dd>
+						</dl>
+						<dl>
+							<dt><a href="http://freemarker.sourceforge.net/" target="_blank">FreeMarker</a></dt>
+							<dd>Java模板引擎</dd>
+						</dl>
+						<dl>
+							<dt><a href="http://twitter.github.com/bootstrap/index.html" target="_blank">Bootstrap</a></dt>
+							<dd>Twitter开源的一套CSS框架</dd>
+						</dl>
+					</section>
+				</div>
+			</div>
+			<hr>
+			<footer><p>© NLSDE 2012</p></footer>
+		</div>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/jquery-1.7.1.min.js"></script>
+	</body>
+</html>

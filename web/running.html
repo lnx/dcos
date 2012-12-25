@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DCOS Demonstration</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="/css/docs.css" />
+		<link rel="stylesheet" type="text/css" href="/css/prettify.css" />
+		<link rel="stylesheet" type="text/css" href="/css/reset.css" />
+	</head>
+	<body data-spy="scroll" data-target=".bs-docs-sidebar">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="/">DCOS</a>
+					<div class="nav-collapse subnav-collapse">
+						<ul class="nav">
+							<li><a href="/">主页</a></li>
+							<li class="active"><a href="/running">实例运行</a></li>
+							<li><a href="/monitor">监测数据</a></li>
+							<li><a href="/nlist">节点列表</a></li>
+							<li><a href="/guide">说明</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="input-prepend">
+				<form id="cmdForm" method="post" action="/running/command">
+					<button class="btn btn-info" type="submit" style="width:7%;">运行</button>
+					<input name="rawCommand" type="text" placeholder="Type commands..." style="width:93%;margin-left:-13px;" />
+				</form>
+			</div>
+			<span id="cmdResult"></span>
+			<div class="row">
+				<div id="area" class="span9" style="width:70%;height:505px;margin-left:5px;"></div>
+				<div id="statistics" class="span3"></div>
+			</div>
+			<hr>
+			<footer><p>© NLSDE 2012</p></footer>
+		</div>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/flotr2.min.js"></script>
+		<script src="/js/jquery-1.7.1.min.js"></script>
+		<script src="/js/jquery.form.js"></script>
+		<script type = "text/javascript">
+		<!--
+			$(function() {
+				$('#cmdResult').load('/running/command');
+				monitorHandler();
+				$('#cmdForm').submit(function() {
+					$(this).ajaxSubmit();
+					$('#cmdResult').load('/running/command');
+					$("input[name='rawCommand']").val('');
+					return false;
+				});
+			})
+			
+			function monitorHandler() {
+				function updateMonitor() {
+					$.ajax({
+						url: '/running/points',
+						dataType: 'json',
+						success: updateGraph
+					});
+					function updateGraph(json) {
+						var array = new Array(), point, graph, i, j;
+						for (i = 0; i < json.length; i++) {
+							array[i] = []
+							for (j = 0; j < json[i].length; j++) {
+								point = [json[i][j].x, json[i][j].y, json[i][j].r];
+								array[i].push(point);
+							}
+						}
+						graph = Flotr.draw(document.getElementById("area"), array, { bubbles:{ show:true, baseRadius:5 }, xaxis:{ min:0, max:100 }, yaxis:{ min:0, max:100 }});
+					}
+					$('#statistics').load('/running/statistics');
+				}
+				updateMonitor();
+				setInterval(updateMonitor, 500);
+			}
+		-->
+		</script>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DCOS Demonstration</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="/css/docs.css" />
+		<link rel="stylesheet" type="text/css" href="/css/prettify.css" />
+		<link rel="stylesheet" type="text/css" href="/css/reset.css" />
+	</head>
+	<body data-spy="scroll" data-target=".bs-docs-sidebar">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="/">DCOS</a>
+					<div class="nav-collapse subnav-collapse">
+						<ul class="nav">
+							<li class="active"><a href="/">主页</a></li>
+							<li><a href="/running">实例运行</a></li>
+							<li><a href="/monitor">监测数据</a></li>
+							<li><a href="/nlist">节点列表</a></li>
+							<li><a href="/guide">说明</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="hero-unit">
+				<h1>DCOS</h1>
+				<br>
+				<p>为了更好的展示论文中相关算法的具体执行效果，开发了一套可交互的软件对论文中重点章节的研究内容进行展示。通过展示，可以对论文中设计的协同观测系统有更清晰的了解，同时也能看到算法执行中的一些细节。</p>
+				<p><a class="btn btn-primary btn-large" href="/running">开始 »</a></p>
+			</div>
+			<div class="row">
+				<div class="span4">
+					<h2>实例运行</h2>
+					<p>模拟一个边长为100的正方形监控区域，用户可以输入控制命令来控制监控区域内传感器的数量、状态等内容。论文中的二层结构组网、共同推举、换届选举、区域代理节点失效后迅速恢复并选出新的区域代理节点等内容将在本部分演示。系统命令语法可查看<a href="/guide">说明</a>部分内容。</p>
+					<p><a class="btn" href="/running">进入 »</a></p>
+				</div>
+				<div class="span4">
+					<h2>监测数据</h2>
+					<p>发生事件后，系统采集到的事件数据将会集中收集到区域代理节点。本部分将这些收集到的数据绘制成动态曲线，以此实时的观看整个系统的运行状况。实例运行部分，如果通过命令停止某些节点，本部分的监测数据曲线也会随之受到相应的影响。</p>
+					<p><a class="btn" href="/statistics">进入 »</a></p>
+				</div>
+				<div class="span4">
+					<h2>节点列表</h2>
+					<p>详细列出了系统内部每个节点的基本信息、启动时间、是否为区域代理节点、是否处于睡眠状态、何时成为区域代理节点、当选区域代理节点总时长、监测总时长等关于节点的详细信息，本节内容是对实例运行和检测数据量部分内容的一个补充说明。</p>
+					<p><a class="btn" href="/guide">进入 »</a></p>
+				</div>
+			</div>
+			<hr>
+			<footer><p>© NLSDE 2012</p></footer>
+		</div>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/jquery-1.7.1.min.js"></script>
+	</body>
+</html>

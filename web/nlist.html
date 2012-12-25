@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DCOS Demonstration</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="/css/docs.css" />
+		<link rel="stylesheet" type="text/css" href="/css/prettify.css" />
+		<link rel="stylesheet" type="text/css" href="/css/reset.css" />
+	</head>
+	<body data-spy="scroll" data-target=".bs-docs-sidebar">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="/">DCOS</a>
+					<div class="nav-collapse subnav-collapse">
+						<ul class="nav">
+							<li><a href="/">主页</a></li>
+							<li><a href="/running">实例运行</a></li>
+							<li><a href="/monitor">监测数据</a></li>
+							<li class="active"><a href="/nlist">节点列表</a></li>
+							<li><a href="/guide">说明</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div id="nodes" class="span11"></div>
+			</div>
+		</div>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/flotr2.min.js"></script>
+		<script src="/js/jquery-1.7.1.min.js"></script>
+		<script src="/js/jquery.form.js"></script>
+		<script type = "text/javascript">
+		<!--
+			$(function() {
+				nodesHandler();
+			})
+			
+			function nodesHandler() {
+				function updateNodes() {
+					$('#nodes').load('/nlist/nodes');
+				}
+				updateNodes();
+				setInterval(updateNodes, 500);
+			}
+		-->
+		</script>
+	</body>
+</html>
